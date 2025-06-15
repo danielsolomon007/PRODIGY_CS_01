@@ -1,12 +1,12 @@
-print("Welcome to Caesar Cipher!")
+print("Welcome to the Caesar Cipher!")
 
-choice = input("Do you want to encrypt or decrypt? (e/d): ")
+choice = input("Do you want to Encrypt or decrypt? (e/d): ")
 
 if choice != 'e' and choice != 'd':
-    print("Invalid option. Exiting program.")
+    print("Invalid option. exiting program.")
 else:
    
-    message = input("Enter your message: ")
+    message = input("Enter your Message: ")
     shift_input = input("Enter shift number: ")
 
     if shift_input.strip().isdigit():
@@ -21,6 +21,7 @@ else:
     for char in message:
        
         if char.isalpha():
+            
             if char.isupper():
                 base = ord('A')
             else:
@@ -33,6 +34,7 @@ else:
                 new_char = chr((ord(char) - base - shift) % 26 + base)
 
             result = result + new_char
+
         else:
             result = result + char
 
